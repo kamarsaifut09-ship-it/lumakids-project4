@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const questions = [
+  ['Какие модели есть в наличии?', 'Каталог содержит предварительные образцы. Актуальность, размеры, материалы и цвета нужно уточнить у менеджера.'],
+  ['Можно ли заказать индивидуальную модель?', 'Старый сайт упоминает индивидуальные модели и цвета. Возможность конкретного заказа нужно согласовать.'],
+  ['Как узнать минимальный заказ?', 'На старом сайте указана предварительная сумма около 10 млн сум. Это ориентир, а не подтверждённое действующее условие.'],
+  ['Как связаться с оптовым отделом?', 'Контактные данные владельца пока не предоставлены. Добавьте сюда подтверждённый телефон, Telegram или email.'],
+];
+---
+
+<BaseLayout title="Контакты и вопросы — Luma Kids" description="Черновой раздел контактов и ответов на вопросы об ассортименте и сотрудничестве. Данные менеджера и условия нужно подтвердить.">
+  <section class="page-intro wrap page-intro-wide"><div><h1>Начнём<br /><em>с вашего вопроса.</em></h1><p class="eyebrow heading-note">Контакты и вопросы</p></div><div class="page-intro-copy"><p>Связаться с менеджером пока нельзя: рабочие контакты не предоставлены для шаблона.</p><a class="button button-dark" href="/wholesale/">Подготовить запрос <span aria-hidden="true">↗</span></a></div></section>
+  <section class="section contact-section"><div class="wrap contact-grid"><div class="contact-card"><span class="contact-mark" aria-hidden="true">L</span><h2>[КОНТАКТ МЕНЕДЖЕРА — ДОБАВИТЬ]</h2><p class="eyebrow heading-note">Оптовый отдел</p><p>Телефон, Telegram и email появятся после подтверждения владельцем.</p><span class="placeholder-chip">КОНТАКТЫ УТОЧНЯЮТСЯ</span></div><div class="faq-column"><h2>Перед первым<br /><em>запросом.</em></h2><p class="eyebrow heading-note">Частые вопросы</p><div class="faq-list">{questions.map(([question, answer]) => <details class="faq-item"><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></div></div></section>
+</BaseLayout>

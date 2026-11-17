@@ -1,0 +1,49 @@
+---
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import '../styles/global.css';
+
+const {
+  title = 'Luma Kids — детский трикотаж для оптовых партнёров',
+  description = 'Детский трикотаж и оптовое сотрудничество с Luma Kids. Посмотрите модели и подготовьте запрос для менеджера.',
+  canonical = Astro.url.pathname,
+} = Astro.props;
+const canonicalUrl = new URL(canonical, Astro.site ?? Astro.url).href;
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Luma Kids',
+  url: Astro.site?.href ?? 'https://beautiful-meringue-d997c1.netlify.app',
+};
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f7f4" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="sitemap" href="/sitemap.xml" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Luma Kids" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+    <SiteHeader />
+    <main id="main"><slot /></main>
+    <SiteFooter />
+    <div class="notice" role="status" aria-live="polite" data-notice hidden></div>
+    <script src="../scripts/site.js"></script>
+    <slot name="scripts" />
+  </body>
+</html>

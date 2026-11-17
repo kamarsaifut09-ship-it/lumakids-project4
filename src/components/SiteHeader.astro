@@ -1,0 +1,29 @@
+---
+import logo from '../assets/luma-draft/luma-mark.webp';
+const nav = [
+  { href: '/', label: 'Главная' },
+  { href: '/catalog/', label: 'Каталог' },
+  { href: '/production/', label: 'Производство' },
+  { href: '/wholesale/', label: 'Партнёрам' },
+];
+const path = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <div class="header-inner wrap">
+    <a class="wordmark" href="/" aria-label="Luma Kids — главная">
+      <img class="wordmark-logo" src={logo.src} width={logo.width} height={logo.height} alt="" />
+      <span class="wordmark-name">LUMA<span>KIDS</span></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-menu-toggle>
+      <span class="menu-toggle-lines" aria-hidden="true"></span>
+      <span class="sr-only">Открыть меню</span>
+    </button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Основная навигация" data-primary-nav>
+      {nav.map((item) => (
+        <a href={item.href} aria-current={path === item.href ? 'page' : undefined}>{item.label}</a>
+      ))}
+      <a class="button button-dark nav-cta" href="/wholesale/">Обсудить заказ <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>

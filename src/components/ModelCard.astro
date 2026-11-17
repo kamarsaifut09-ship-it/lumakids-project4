@@ -1,0 +1,39 @@
+---
+const { model } = Astro.props;
+const dialogId = `details-${model.id.toLowerCase()}`;
+const photoAlt = model.image
+  ? `Предварительное фото для сверки образца ${model.id}; соответствие коду требует подтверждения`
+  : `Фото образца ${model.id} нужно добавить после подтверждения`;
+---
+<article class="model-card" id={model.id.toLowerCase()} data-model-card data-model={model.id.toLowerCase()}>
+  <button class="model-visual" type="button" data-open-model-details={dialogId} aria-haspopup="dialog" aria-controls={dialogId} aria-label={`Открыть предварительную информацию об образце ${model.id}`}>
+    {model.image ? (
+      <img class="model-photo" src={model.image.src} width={model.image.width} height={model.image.height} alt={photoAlt} loading="lazy" decoding="async" />
+    ) : (
+      <span class="model-placeholder" role="img" aria-label={photoAlt}><span>ФОТО<br />ОЖИДАЕТСЯ</span></span>
+    )}
+    <span class="swatch-caption">ПРЕДВАРИТЕЛЬНОЕ ФОТО</span>
+    <span class="swatch-code">{model.id}</span>
+    <span class="model-view-label">Посмотреть</span>
+  </button>
+  <div class="model-meta">
+    <div><span class="model-id">{model.id}</span><span class="model-type">{model.category}</span></div>
+    <button class="select-model" type="button" data-select-model={model.id} aria-pressed="false">Добавить в запрос <img class="icon-inline" src="/icons/plus.svg" alt="" aria-hidden="true" /></button>
+  </div>
+  <dialog class="model-dialog" id={dialogId} aria-labelledby={`${dialogId}-title`} data-model-dialog>
+    <div class="model-dialog-inner">
+      <button class="dialog-close" type="button" data-close-model-details aria-label="Закрыть подробности">×</button>
+      {model.image ? (
+        <img class="dialog-photo" src={model.image.src} width={model.image.width} height={model.image.height} alt={photoAlt} loading="lazy" decoding="async" />
+      ) : (
+        <div class="dialog-placeholder" role="img" aria-label={photoAlt}>Фото образца будет добавлено после сверки</div>
+      )}
+      <div class="model-dialog-copy">
+        <p class="eyebrow">Черновой образец · данные уточняются</p>
+        <h2 id={`${dialogId}-title`}>{model.id}</h2>
+        <p>Это черновое фото из материалов проекта. Соответствие коду модели, права на изображение и принт, согласие законного представителя ребёнка и характеристики товара нужно подтвердить.</p>
+        <button class="button button-pink" type="button" data-select-model={model.id} aria-pressed="false">Добавить в запрос <span aria-hidden="true">+</span></button>
+      </div>
+    </div>
+  </dialog>
+</article>

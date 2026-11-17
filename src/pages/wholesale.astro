@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Оптовое сотрудничество — Luma Kids" description="Обсудите оптовый заказ детского трикотажа с Luma Kids. Условия подтверждаются индивидуально.">
+  <section class="page-intro wrap page-intro-wide"><div><p class="eyebrow">Оптовое сотрудничество</p><h1>Соберём запрос<br /><em>по делу.</em></h1></div><div class="page-intro-copy"><p>Выберите модели, укажите контакт и коротко опишите задачу. Сейчас форма работает как демонстрация и не отправляет данные менеджеру.</p><a class="text-link" href="/catalog/">Сначала выбрать модели <span aria-hidden="true">↗</span></a></div></section>
+  <section class="section wholesale-section" id="request"><div class="wrap wholesale-grid"><div class="terms-panel"><h2>Три шага<br />до <em>разговора.</em></h2><p class="eyebrow heading-note">Как начать</p><div class="simple-steps"><div><span>01</span><p>Выберите модели из подборки или опишите свою идею.</p></div><div><span>02</span><p>Оставьте удобный способ связи и детали заказа.</p></div><div><span>03</span><p>Менеджер уточнит параметры после подключения реального канала.</p></div></div><div class="provisional-box"><span>Условия со старого сайта · предварительные</span><p>Минимальный заказ и схема оплаты указаны как ориентиры и требуют подтверждения владельцем.</p><a href="/contact/">Задать вопрос <span aria-hidden="true">↗</span></a></div></div>
+    <form class="request-form" data-request-form novalidate>
+      <div class="form-heading"><span class="form-index">L / K</span><div><h2>Подготовить запрос</h2><p>Заполните поля — браузер соберёт текст для копирования.</p></div></div>
+      <div class="selected-models-field"><span>Выбранные модели</span><strong data-selected-models>Пока модели не выбраны</strong><a href="/catalog/">Изменить выбор</a></div>
+      <div class="field"><label for="name">Ваше имя</label><input id="name" name="name" autocomplete="name" aria-describedby="name-error" /><span class="field-error" data-field-error data-error-name id="name-error" hidden></span></div>
+      <div class="field"><label for="contact">Телефон или Telegram</label><input id="contact" name="contact" autocomplete="tel" aria-describedby="contact-error" /><span class="field-error" data-field-error data-error-contact id="contact-error" hidden></span></div>
+      <div class="field"><label for="comment">Что планируете заказать?</label><textarea id="comment" name="comment" rows="4" placeholder="Модели, количество или ваш вопрос"></textarea></div>
+      <button class="button button-pink form-submit" type="submit">Сформировать текст запроса <span aria-hidden="true">↗</span></button>
+      <p class="form-disclaimer" data-request-message role="status">Демонстрационный режим: автоматическая отправка не подключена.</p>
+      <label class="field output-field" for="request-output">Текст запроса<textarea id="request-output" data-request-output rows="6" readonly hidden></textarea></label>
+      <button class="button button-outline copy-button" type="button" data-copy-request hidden>Скопировать текст</button>
+    </form>
+  </div></section>
+</BaseLayout>

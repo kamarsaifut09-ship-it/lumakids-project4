@@ -23,7 +23,7 @@ const path = Astro.url.pathname;
       {nav.map((item) => (
         <a href={item.href} aria-current={path === item.href ? 'page' : undefined}>{item.label}</a>
       ))}
-      <a class="button button-dark nav-cta" href="/wholesale/">Обсудить заказ <span aria-hidden="true">↗</span></a>
+      <a class="button button-dark nav-cta" href="/wholesale/">Обсудить заказ <img class="icon-inline icon-arrow icon-arrow-right arrow-hover" src="/icons/arrow-alt-ltop.svg" alt="" aria-hidden="true" /></a>
     </nav>
   </div>
 </header>

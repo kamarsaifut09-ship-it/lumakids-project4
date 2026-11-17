@@ -7,7 +7,7 @@ import { models } from '../data/models.js';
 <BaseLayout title="Каталог моделей детского трикотажа — Luma Kids" description="Предварительная подборка моделей Luma Kids. Выберите образцы и подготовьте запрос для оптового отдела.">
   <section class="page-intro wrap">
     <div><h1>Каталог<br /><em>моделей.</em></h1><p class="eyebrow heading-note">Предварительная подборка</p></div>
-    <div class="page-intro-copy"><p>Это предварительные фото. Соответствие снимков кодам, актуальность моделей, размеры, материалы и цвета требуют подтверждения.</p><a class="text-link" href="/wholesale/">Как сделать запрос <span aria-hidden="true">↗</span></a></div>
+    <div class="page-intro-copy"><p>Это предварительные фото. Соответствие снимков кодам, актуальность моделей, размеры, материалы и цвета требуют подтверждения.</p><a class="text-link" href="/wholesale/">Как сделать запрос <img class="icon-inline icon-arrow icon-arrow-right arrow-hover" src="/icons/arrow-alt-ltop.svg" alt="" aria-hidden="true" /></a></div>
   </section>
   <section class="catalog-section wrap" aria-labelledby="catalog-heading">
     <h2 class="sr-only" id="catalog-heading">Модели из предварительной подборки</h2>
@@ -17,7 +17,7 @@ import { models } from '../data/models.js';
     </div>
     <div class="empty-state" data-empty-state hidden><span class="empty-mark" aria-hidden="true">?</span><p>Модель с таким кодом не найдена.</p><button class="text-link" type="button" data-clear-search>Очистить поиск</button></div>
   </section>
-  <div class="selection-bar" data-selection-bar hidden><div><strong><span data-selection-count>0</span> моделей в запросе</strong><span>Выбор сохранится при переходе к запросу</span></div><a class="button button-pink" data-selected-models-link href="/wholesale/#request">Продолжить <span aria-hidden="true">↗</span></a></div>
+  <div class="selection-bar" data-selection-bar hidden><div><strong><span data-selection-count>0</span> моделей в запросе</strong><span>Выбор сохранится при переходе к запросу</span></div><a class="button button-pink" data-selected-models-link href="/wholesale/#request">Продолжить <img class="icon-inline icon-arrow icon-arrow-right arrow-hover" src="/icons/arrow-alt-ltop.svg" alt="" aria-hidden="true" /></a></div>
   <script>
     const search = document.querySelector('[data-catalog-search]');
     document.querySelector('[data-clear-search]')?.addEventListener('click', () => { search.value = ''; search.dispatchEvent(new Event('input', { bubbles: true })); search.focus(); });

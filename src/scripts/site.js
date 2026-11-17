@@ -44,7 +44,7 @@ function refreshModelButtons() {
     const selected = selectedModels.includes(button.dataset.selectModel);
     button.setAttribute('aria-pressed', String(selected));
     button.classList.toggle('is-selected', selected);
-    button.innerHTML = selected ? 'Добавлено <span aria-hidden="true">✓</span>' : 'Добавить в запрос <span aria-hidden="true">+</span>';
+    button.innerHTML = selected ? 'Добавлено <img class="icon-inline" src="/icons/checkmark.svg" alt="" aria-hidden="true">' : 'Добавить в запрос <img class="icon-inline" src="/icons/plus.svg" alt="" aria-hidden="true">';
   });
 }
 

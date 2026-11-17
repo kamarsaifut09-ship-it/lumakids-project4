@@ -68,8 +68,16 @@ img { max-width: 100%; }
 .button-outline { color: var(--ink); background: transparent; border-color: #a9aaa3; }
 .button-outline:hover { border-color: var(--ink); background: var(--white); }
 .icon-inline { width: 18px; height: 18px; display: inline-block; flex: 0 0 auto; object-fit: contain; }
+.icon-arrow { transform-origin: center; transition: transform .22s ease; }
+.icon-arrow-right { transform: rotate(90deg); }
+.icon-arrow-down { transform: rotate(180deg); }
+.icon-arrow-up { transform: rotate(0deg); }
+.arrow-hover:hover .icon-arrow-right, .arrow-hover:focus-visible .icon-arrow-right { transform: rotate(45deg); }
 .button-pink .icon-inline, .button-dark .icon-inline { filter: brightness(0) invert(1); }
-.button-light .icon-inline, .button-outline .icon-inline { filter: none; }
+.button-light .icon-inline, .button-outline .icon-inline, .footer-bottom .icon-inline { filter: brightness(0) saturate(100%) invert(11%) sepia(5%) saturate(523%) hue-rotate(46deg) brightness(94%) contrast(91%); }
+.select-model .icon-inline { filter: brightness(0) saturate(100%) invert(11%) sepia(5%) saturate(523%) hue-rotate(46deg) brightness(94%) contrast(91%); }
+.select-model.is-selected .icon-inline { filter: brightness(0) saturate(100%) invert(18%) sepia(92%) saturate(2828%) hue-rotate(294deg) brightness(84%) contrast(91%); }
+.text-link .icon-inline, .button .icon-inline { width: 16px; height: 16px; }
 .select-model { min-height: 44px; border: 1.5px solid var(--line); border-radius: 10px; }
 .select-model[aria-pressed="true"] { border-color: var(--pink-dark); }
 .dialog-close, .menu-toggle { border: 1.5px solid var(--line); border-radius: 10px; }
